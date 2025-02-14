@@ -20,6 +20,9 @@ listname.append() appends a element at the end of the list
 listname.extend(anotherlist) will add anotherlist to listname list
 lists are indexed and ordered in the way the elements were added
 
+To print the index of an element in a Python array (or list), you can use the index() method.
+
+
 Tuple
 Tuples are used to store multiple items in a single variable.
 A tuple is a collection which is ordered and unchangeable.
@@ -29,16 +32,19 @@ Tuples are written with round brackets.
 Tuple items are ordered, unchangeable, and allow duplicate values.Lists also allow duplicate values.
 
 Ordered
-When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.
+When we say that tuples are ordered, it means that the items have a defined order, and that order will 
+not change.
 
 Unchangeable
-Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been created.
+Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been
+ created.
 
 The order is based on the order in which the elements were added in a tuple
 
 Since tuples are indexed, they can have items with the same value:
 
-To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
+To create a tuple with only one item, you have to add a comma after the item, otherwise Python will
+ not recognize it as a tuple.
 
 If a data structure is unindexed then it doesn't contain duplicate values
 
@@ -60,10 +66,15 @@ But there is a workaround. You can convert the tuple into a list, change the lis
 
 Add tuple to a tuple. You are allowed to add tuples to tuples, so if you want to add one item, (or many), create a new tuple with the item(s), and add it to the existing tuple:
 
+A tuple is defined by the presence of a comma, not just parentheses. Without a comma,Python interprets 
+the expression inside the parentheses as a regular expression or value, not as a tuple. For example, (5)
+is just the integer 5, not a tuple. To create a single-element tuple, you need to add a comma: (5,).
+
 Unpacking a Tuple
 When we create a tuple, we normally assign values to it. This is called "packing" a tuple:
 
-But, in Python, we are also allowed to extract the values back into variables. This is called "unpacking":
+But, in Python, we are also allowed to extract the values back into variables. 
+This is called "unpacking":
 
 thistuple = ("apple", "banana", "cherry")
 (apple,banana,cherry)=thistuple
@@ -71,12 +82,23 @@ thistuple = ("apple", "banana", "cherry")
 print(cherry)
 
 
-Note: The number of variables must match the number of values in the tuple, if not, you must use an asterisk to collect the remaining values as a list.
+Note: The number of variables must match the number of values in the tuple, if not, you must use an 
+asterisk to collect the remaining values as a list.
 
 Using Asterisk*
-If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the variable as a list:
+If the number of variables is less than the number of values, you can add an * to the variable name and
+the values will be assigned to the variable as a list:
 
-If the asterisk is added to another variable name than the last, Python will assign values to the variable until the number of values left matches the number of variables left.
+thistuple = ("apple", "banana", "cherry","watermelon","papaya")
+(apple,banana,*remainingFruits)=thistuple 
+print(remainingFruits) -> ['cherry', 'watermelon','papaya]
+
+If the asterisk is added to another variable name than the last, Python will assign values to the
+variable until the number of values left matches the number of variables left.
+thistuple = ("apple", "banana", "cherry","watermelon","papaya")
+(apple,*remainingFruits,papaya)=thistuple
+
+print(remainingFruits) -> ['banana', 'cherry', 'watermelon']
 
 Set
 Sets are used to store multiple items in a single variable.
@@ -84,11 +106,14 @@ Sets are used to store multiple items in a single variable.
 A set is a collection which is unordered, unchangeable*, and unindexed.
 
 * Note: Set items are unchangeable, but you can remove items and add new items.
+when we say that set items are "unchangeable," it means that the individual elements within a set
+cannot be modified directly.
 
 Unordered
 Unordered means that the items in a set do not have a defined order.
 
-Set items can appear in a different order every time you use them, and cannot be referred to by index or key.
+Set items can appear in a different order every time you use them, and cannot be referred to by
+index or key.
 
 Note: The values True and 1 are considered the same value in sets, and are treated as duplicates:
 
@@ -103,6 +128,21 @@ Use of constructor
 It is also possible to use the set() constructor to make a set.
 It is also possible to use the list() constructor to make a list.
 It is also possible to use the tuple() constructor to make a tuple.
+
+myset=set({1,2,3,4})
+mynewlist=list([2,3,4,'a'])
+mynewtuple=tuple((1,))
+print(myset,mynewlist,mynewtuple)
+
+In python,to print multiple values at the same time,we use ',' a comma.
+
+Reassignment: When you reassign a variable to a new value, Python creates a new object in memory to 
+hold that value. The variable then points to this new object. The old object that the variable was 
+pointing to may become eligible for garbage collection if there are no other references to it.
+
+mySet={1,2,3,4}
+myList=[5,6,7,8]
+mySet.update(myList) -> 1,2,3,4,5,6,7,8 ->ordering can vary because set is unordered
 
 Add Any Iterable
 The object in the update() method does not have to be a set, it can be any iterable object (tuples, lists, dictionaries etc.).
@@ -175,7 +215,8 @@ The intersection_update() method will also keep ONLY the duplicates, but it will
 
 set1.intersection_update(set2)
 
-The difference() method will return a new set that will contain only the items from the first set that are not present in the other set.
+The difference() method will return a new set that will contain only the items from the first set that
+ are not present in the other set.
 Keep all items from set1 that are not in set2:
 
 You can use the - operator instead of the difference() method, and you will get the same result.
@@ -185,12 +226,13 @@ Note: The - operator only allows you to join sets with sets, and not with other 
 The difference_update() method will also keep the items from the first set that are not in the other set, but it will change the original set instead of returning a new set.
 
 
-he symmetric_difference() method will keep only the elements that are NOT present in both sets.
+he symmetric_difference() method will keep only the elements that are NOT present in both sets.Uncommon
+elements.
 
 You can use the ^ operator instead of the symmetric_difference() method, and you will get the same result.
 
 there are three methods wich modify the same set instead of returning a new set:
-symmetric_difference_update() ,intersection_update,difference_update()
+symmetric_difference_update() ,intersection_update(),difference_update()
 
 
 Dictionary
@@ -198,7 +240,8 @@ Dictionaries are used to store data values in key:value pairs.
 
 A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
 
-As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
+As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are
+unordered.
 
 Duplicates Not Allowed
 Dictionaries cannot have two items with the same key:
@@ -268,7 +311,7 @@ for x in mydict:
     print(x,mydict[x])
 for x,obj in myfamily.items():
     print(x)
-    
+
     for y in obj:
         print(y+':',obj[y])
 
