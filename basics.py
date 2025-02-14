@@ -70,3 +70,12 @@ myKye='title'
 mydict={myKye:'value'}
 x=mydict.items()
 print(x)
+
+mydict={"name":"raj","email":"rajop"}
+
+
+def my_function(**kwargs):
+    for key,value in kwargs.items():
+        print(f'{key} , {value}')
+
+my_function(name="Alice",age=30, location="jersey")

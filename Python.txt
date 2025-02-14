@@ -336,7 +336,8 @@ if condition cannot be empty
 we can write pass keyword to pass the condition
 
 Arbitrary Arguments, *args
-If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function definition.
+If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function
+ definition.
 
 This way the function will receive a tuple of arguments, and can access the items accordingly
 
@@ -348,7 +349,11 @@ here indexing starts from 0
 
 
 Arbitrary Keyword Arguments, **kwargs
-If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition.
+If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter
+ name in the function definition.
+
+ Arbitrary keyword arguments in Python allow you to pass a variable number of named arguments (key-value pairs) to a function.
+  This is done using **kwargs, where kwargs stands for "keyword arguments."
 
 This way the function will receive a dictionary of arguments, and can access the items accordingly:
 
@@ -374,7 +379,8 @@ my_function("Brazil")
 
 
 The pass Statement
-function definitions cannot be empty, but if you for some reason have a function definition with no content, put in the pass statement to avoid getting an error.
+function definitions cannot be empty, but if you for some reason have a function definition with no content, 
+put in the pass statement to avoid getting an error.
 
 Positional arguements and Keyword arguements
 
