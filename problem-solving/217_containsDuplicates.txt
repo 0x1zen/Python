@@ -1,0 +1,17 @@
+1.Brute Force :-
+-Using two nested loops.
+-take i'th element from the first loop,and try to find it in the second loop.
+-make sure to add a condition where the loop is not checking the element on the same index,otherwise it
+will always return True.
+Time Complexity:- O(n^2)
+Space ComplexityL- O(1)
+
+2.Better :-
+-Sort the list
+-run a loop and check if adjacents are same
+Time Complexity:- O(n) + O(nlogn) = O(n)
+Space Complexity:- O(1)
+
+3.Optimal :-
+-Create a hashset.Since a set in python doesnt contain any duplicates.
+-for every iteration of loop,find the currElement in the hashset,return if found?true:false
