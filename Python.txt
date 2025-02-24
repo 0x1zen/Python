@@ -1254,3 +1254,16 @@ it is basically remove directory
 To delete a folder it should not contain any files
 
 
+Things I learned while problem solving:
+1) for i in nums  -Using this syntax for iterating on loop i is actually a element in the nums list
+2) for i in range(len(nums)) - here i is the index
+3) if want both the index and the element ,we use below syntax
+
+for i, n in enumerate(nums)
+
+4)result=defaultdict(list)
+-creates a dictionary with all the values as list
+
+
+
+
